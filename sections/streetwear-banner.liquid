@@ -1,0 +1,129 @@
+{% comment %}
+StreetWhere Streetwear - Featured Banner Section
+{% endcomment %}
+
+<section class="streetwear-banner section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    <div class="banner-content">
+      {% if section.settings.heading != blank %}
+        <h2 class="banner-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      
+      {% if section.settings.subheading != blank %}
+        <p class="banner-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+      
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link | default: '/collections/all' }}" 
+           class="button button-primary streetwear-cta">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+    
+    {% if section.settings.image != blank %}
+      <div class="banner-image">
+        {{ section.settings.image | image_url: width: 1200 | image_tag: alt: section.settings.heading }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .streetwear-banner {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+  
+  .banner-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .banner-heading {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .banner-subheading {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .streetwear-cta {
+    background: linear-gradient(45deg, #ff6b35, #f9ca24);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease;
+  }
+  
+  .streetwear-cta:hover {
+    transform: translateY(-2px);
+  }
+  
+  @media screen and (max-width: 749px) {
+    .banner-heading {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "StreetWhere Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Latest Street Styles",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Discover authentic streetwear that defines your style",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Shop Now",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "StreetWhere Banner"
+    }
+  ]
+}
+{% endschema %}
