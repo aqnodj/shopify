@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "streetwear-hero": {
+      "type": "streetwear-banner"
+    },
+    "featured-collections": {
+      "type": "featured-collection",
+      "blocks": {
+        "featured-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hoodies-sweatshirts",
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "full_width": false,
+            "show_view_all": true,
+            "swipe_on_mobile": true,
+            "image_ratio": "adapt",
+            "show_secondary_image": true,
+            "show_vendor": false,
+            "show_rating": true
+          }
+        },
+        "featured-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "t-shirts-tops",
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "full_width": false,
+            "show_view_all": true,
+            "swipe_on_mobile": true,
+            "image_ratio": "adapt",
+            "show_secondary_image": true,
+            "show_vendor": false,
+            "show_rating": true
+          }
+        },
+        "featured-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sneakers-footwear",
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "full_width": false,
+            "show_view_all": true,
+            "swipe_on_mobile": true,
+            "image_ratio": "adapt",
+            "show_secondary_image": true,
+            "show_vendor": false,
+            "show_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "featured-1",
+        "featured-2",
+        "featured-3"
+      ]
+    },
+    "streetwear-newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "streetwear-hero",
+    "featured-collections",
+    "streetwear-newsletter"
+  ]
+}
