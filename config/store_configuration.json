@@ -1,0 +1,127 @@
+{
+  "payment_settings": {
+    "shopify_payments": {
+      "enabled": true,
+      "credit_cards": ["visa", "mastercard", "amex", "discover"],
+      "digital_wallets": ["apple_pay", "google_pay", "shop_pay"],
+      "processing_fee": "2.9% + $0.30"
+    },
+    "paypal": {
+      "enabled": true,
+      "express_checkout": true,
+      "paypal_credit": true,
+      "pay_in_4": true,
+      "processing_fee": "3.49% + $0.49"
+    },
+    "buy_now_pay_later": {
+      "klarna": {
+        "enabled": true,
+        "installments": [4, 6, 12],
+        "processing_fee": "3.29% + $0.30"
+      },
+      "sezzle": {
+        "enabled": true,
+        "installments": 4,
+        "processing_fee": "6.00%"
+      },
+      "affirm": {
+        "enabled": true,
+        "financing_options": ["3_months", "6_months", "12_months"],
+        "processing_fee": "3.50% + $0.30"
+      }
+    }
+  },
+  "shipping_configuration": {
+    "zones": {
+      "domestic_usa": {
+        "countries": ["United States"],
+        "rates": {
+          "free_shipping": {
+            "condition": "order_total >= $75",
+            "price": 0,
+            "delivery_time": "5-8 business days"
+          },
+          "standard": {
+            "price": 6.99,
+            "delivery_time": "5-8 business days"
+          },
+          "express": {
+            "price": 12.99,
+            "delivery_time": "2-3 business days"
+          },
+          "overnight": {
+            "price": 24.99,
+            "delivery_time": "1 business day"
+          }
+        }
+      },
+      "canada": {
+        "countries": ["Canada"],
+        "rates": {
+          "standard_international": {
+            "price": 14.99,
+            "delivery_time": "7-14 business days"
+          },
+          "express_international": {
+            "price": 29.99,
+            "delivery_time": "3-7 business days"
+          }
+        }
+      },
+      "international": {
+        "countries": ["all_other_countries"],
+        "rates": {
+          "standard_international": {
+            "price": 19.99,
+            "delivery_time": "10-21 business days"
+          },
+          "express_international": {
+            "price": 39.99,
+            "delivery_time": "5-10 business days"
+          }
+        }
+      }
+    },
+    "packaging": {
+      "apparel": {
+        "weight_range": "0.5-2 lbs",
+        "box_type": "standard_apparel",
+        "dimensions": "12x9x3 inches"
+      },
+      "footwear": {
+        "weight_range": "2-4 lbs",
+        "box_type": "shoe_box",
+        "dimensions": "14x10x6 inches"
+      },
+      "accessories": {
+        "weight_range": "0.1-1 lb",
+        "box_type": "small_package",
+        "dimensions": "8x6x2 inches"
+      }
+    }
+  },
+  "tax_configuration": {
+    "settings": {
+      "automatic_calculation": true,
+      "tax_inclusive_pricing": false,
+      "show_taxes_at_checkout": true,
+      "collect_tax_for": ["domestic", "canada"]
+    },
+    "rates": {
+      "united_states": {
+        "varies_by_state": true,
+        "range": "0-10.75%",
+        "calculation": "destination_based"
+      },
+      "canada": {
+        "gst_hst": "5-15%",
+        "pst_qst": "0-9.975%",
+        "calculation": "destination_based"
+      },
+      "international": {
+        "collection": false,
+        "note": "Customer responsible for import duties/taxes"
+      }
+    }
+  }
+}
