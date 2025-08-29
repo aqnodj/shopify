@@ -1,0 +1,109 @@
+{% comment %}
+StreetWhere Streetwear Navigation
+{% endcomment %}
+
+<nav class="streetwear-nav" role="navigation">
+  <ul class="streetwear-nav-list">
+    <li class="nav-item">
+      <a href="/collections/hoodies" class="nav-link">
+        <span>Hoodies</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/collections/t-shirts" class="nav-link">
+        <span>Tees</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/collections/sneakers" class="nav-link">
+        <span>Kicks</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/collections/joggers" class="nav-link">
+        <span>Joggers</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/collections/accessories" class="nav-link">
+        <span>Accessories</span>
+      </a>
+    </li>
+    <li class="nav-item featured">
+      <a href="/collections/new-drops" class="nav-link">
+        <span>New Drops</span>
+        <span class="badge">🔥</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .streetwear-nav {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 1rem 0;
+    border-bottom: 2px solid #f9ca24;
+  }
+  
+  .streetwear-nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  
+  .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  
+  .nav-item .nav-link:hover {
+    color: #f9ca24;
+    border-color: #f9ca24;
+    transform: translateY(-2px);
+  }
+  
+  .nav-item.featured .nav-link {
+    background: linear-gradient(45deg, #ff6b35, #f9ca24);
+    color: white;
+    border-color: #ff6b35;
+  }
+  
+  .nav-item.featured .nav-link:hover {
+    background: linear-gradient(45deg, #f9ca24, #ff6b35);
+    transform: scale(1.05);
+  }
+  
+  .badge {
+    font-size: 0.8em;
+  }
+  
+  @media screen and (max-width: 749px) {
+    .streetwear-nav-list {
+      gap: 1rem;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding: 0 1rem;
+    }
+    
+    .nav-item .nav-link {
+      white-space: nowrap;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
